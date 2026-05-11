@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'inter';
-    src: url('font/inter.regular.ttf');
+    src: url('/font/inter.regular.ttf');
 }
 @font-face {
     font-family: 'interlight';
-    src: url('font/inter.18pt-light.ttf');
+    src: url('/font/inter.18pt-light.ttf');
 }
 @font-face {
     font-family: 'interextralight';
-    src: url('font/inter.24pt-extralight.ttf');
+    src: url('/font/inter.24pt-extralight.ttf');
 }
 * {
     margin: 0;
