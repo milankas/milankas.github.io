@@ -34,6 +34,7 @@ body {
     }
 
 main {
+    margin: 2rem;
     border-width: 10px;
     border-bottom: #000000;
     background-color:#ffffff;
