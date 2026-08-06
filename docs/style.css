@@ -436,139 +436,182 @@ label {
 }
 
 /* ---------------- responsive: below iPad width ---------------- */
-/* ---------------- responsive: below iPad width ---------------- */
-@media (max-width: 767px) {
-
+@media (max-width: 1024px) {
+ 
+    .works_parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .bivak, .totem, .kabin,
+    .sch, .sorhaz, .szek,
+    .fertoto, .internship {
+        grid-column-start: auto;
+        grid-row-start: auto;
+    }
+}
+ 
+/* Phone / small tablet: stack everything into a single column */
+@media (max-width: 768px) {
+ 
     body {
+        flex-direction: column;
         margin: 10px;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        flex-direction: column;
     }
-
-    main {
-        margin: 1rem;
-    }
-
-    /* stack image + intro text instead of floating side by side */
+ 
+    /* homepage: photo + intro text, currently floated side by side */
     .img-me {
         width: 100%;
-        float: none;
+        max-width: 280px;
+        margin: 0 auto;
         padding-top: 2rem;
-        margin-left: 0;
-        text-align: center;
+        float: none;
     }
-
+ 
     .index-text {
         width: 100%;
-        float: none;
         padding-top: 2rem;
         padding-right: 0;
+        float: none;
     }
-
+ 
+    /* contact page */
     .contact_container {
         width: 100%;
-        float: none;
         margin-left: 0;
         margin-top: 2rem;
+        float: none;
     }
-
-    /* nav becomes stacked / wraps instead of one row */
+ 
+    /* nav: allow it to wrap instead of squeezing onto one line */
     .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
         min-height: auto;
-        padding: 1rem 0;
+        row-gap: 0.5rem;
+        padding: 0.75rem 0;
     }
-
+ 
     .name {
         margin-left: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
     }
-
-    .mainlinks {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .mainlinks a {
-        font-size: 1rem;
-        margin-right: 1rem;
-    }
-
+ 
     .linksplacement {
         flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
     }
-
-    /* sub-nav collapses from 8 columns to 4 */
+ 
+    .mainlinks a {
+        font-size: 0.95rem;
+        margin-right: 1rem;
+    }
+ 
+    /* sub-nav between work pages: 8 columns is unreadable on a phone */
     .works_nav {
         margin: 1rem;
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
+        gap: 12px 0;
     }
-
-    /* portfolio grid: 3 cols -> 1 col, drop row spans */
+ 
+    /* work thumbnails: single column, natural stacking order */
     .works_parent {
         grid-template-columns: 1fr;
-        grid-template-rows: none;
-        gap: 16px;
+        grid-template-rows: auto;
         margin-top: 2rem;
+        gap: 16px;
     }
-
-    .bivak, .totem, .kabin, .sch, .sorhaz, .szek, .fertoto, .internship {
+ 
+    .bivak, .totem, .kabin,
+    .sch, .sorhaz, .szek,
+    .fertoto, .internship {
         grid-row: auto;
-        grid-row-start: auto;
         grid-column-start: auto;
+        grid-row-start: auto;
     }
-
-    /* individual work page layout: stack text/img instead of side-by-side grid */
+ 
+    /* individual work page: title/subtitle/text/image grid collapses */
     .work_text_img_parent {
         grid-template-columns: 1fr;
-        grid-template-rows: none;
-        gap: 16px;
+        grid-template-rows: auto;
+        gap: 20px;
     }
-
+ 
     .title, .subtitle, .text, .img_container_right {
         grid-column: auto;
         grid-row: auto;
         grid-column-start: auto;
         grid-row-start: auto;
-        width: 100%;
     }
-
+ 
+    /* show the hero image first, then title/subtitle/text */
+    .img_container_right {
+        order: -1;
+    }
+ 
+    .img_container_right img {
+        height: auto;
+        max-height: 60vh;
+    }
+ 
+    /* work images further down the page */
     .img_container_center {
-        padding-top: 3rem;
+        padding-top: 2rem;
     }
-
+ 
     .img_container_grid {
-        padding-top: 3rem;
+        padding-top: 2rem;
         grid-template-columns: 1fr;
-        grid-template-rows: none;
         gap: 16px;
     }
-
+ 
     .img_container_grid img {
         height: auto;
-        width: 100%;
+        width:100%;
     }
-
+ 
     .grid2 p, .grid4 p {
         margin-left: 0;
     }
-
-    /* footer no longer fixed so it doesn't overlap stacked content */
+ 
+    /* fixed footer can sit on top of content on short mobile screens */
     .footer {
         position: static;
+        width: auto;
         margin-top: 2rem;
-        text-align: left;
+        text-align: center;
     }
-
-    .contact_text {
-        font-size: 0.9rem;
-    }
-
+ 
+    /* contact form */
     button {
         width: 100%;
     }
 }
+ 
+/* Small phones: trim text sizes a bit further */
+@media (max-width: 480px) {
+ 
+    .name {
+        font-size: 0.95rem;
+        margin-left: 0.75rem;
+    }
+ 
+    .mainlinks a {
+        font-size: 0.85rem;
+        margin-right: 0.6rem;
+    }
+ 
+    .works_nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .contact_text, .text {
+        font-size: 0.85rem;
+    }
+ 
+    .title {
+        font-size: 1.1rem;
+    }
+}
+ 
