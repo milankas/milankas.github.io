@@ -434,3 +434,141 @@ label {
     margin: auto;
     color: black;
 }
+
+/* ---------------- responsive: below iPad width ---------------- */
+/* ---------------- responsive: below iPad width ---------------- */
+@media (max-width: 767px) {
+
+    body {
+        margin: 10px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        flex-direction: column;
+    }
+
+    main {
+        margin: 1rem;
+    }
+
+    /* stack image + intro text instead of floating side by side */
+    .img-me {
+        width: 100%;
+        float: none;
+        padding-top: 2rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .index-text {
+        width: 100%;
+        float: none;
+        padding-top: 2rem;
+        padding-right: 0;
+    }
+
+    .contact_container {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    /* nav becomes stacked / wraps instead of one row */
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 1rem 0;
+    }
+
+    .name {
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .mainlinks {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .mainlinks a {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+
+    .linksplacement {
+        flex-wrap: wrap;
+    }
+
+    /* sub-nav collapses from 8 columns to 4 */
+    .works_nav {
+        margin: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    /* portfolio grid: 3 cols -> 1 col, drop row spans */
+    .works_parent {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+
+    .bivak, .totem, .kabin, .sch, .sorhaz, .szek, .fertoto, .internship {
+        grid-row: auto;
+        grid-row-start: auto;
+        grid-column-start: auto;
+    }
+
+    /* individual work page layout: stack text/img instead of side-by-side grid */
+    .work_text_img_parent {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 16px;
+    }
+
+    .title, .subtitle, .text, .img_container_right {
+        grid-column: auto;
+        grid-row: auto;
+        grid-column-start: auto;
+        grid-row-start: auto;
+        width: 100%;
+    }
+
+    .img_container_center {
+        padding-top: 3rem;
+    }
+
+    .img_container_grid {
+        padding-top: 3rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 16px;
+    }
+
+    .img_container_grid img {
+        height: auto;
+        width: 100%;
+    }
+
+    .grid2 p, .grid4 p {
+        margin-left: 0;
+    }
+
+    /* footer no longer fixed so it doesn't overlap stacked content */
+    .footer {
+        position: static;
+        margin-top: 2rem;
+        text-align: left;
+    }
+
+    .contact_text {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
